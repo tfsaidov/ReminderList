@@ -9,8 +9,8 @@ import UIKit
 
 final class ReminderListViewController: UIViewController {
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, String> // DataSource property that implicitly unwraps a DataSource.
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String> // Type alias for a diffable data source snapshot.
+    private typealias DataSource = UICollectionViewDiffableDataSource<Int, String> // DataSource property that implicitly unwraps a DataSource.
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String> // Type alias for a diffable data source snapshot.
 
     
     // MARK: Public Properties
@@ -48,6 +48,7 @@ final class ReminderListViewController: UIViewController {
         self.cellRegistration()
         self.updateSnapshot()
         self.collectionView.dataSource = self.dataSource // Assign the data source to the collection view.
+        self.collectionView.delegate = self
     }
     
     /// Configuring the collection view appearance using compositional layout. Compositional layout lets you construct views by combining different components: sections, groups, and items. A section represents the outer container view that surrounds a group of items.
@@ -74,7 +75,9 @@ final class ReminderListViewController: UIViewController {
     
     /// Registering the cell to the list, configuring the displayed information and formatting the cell by using the cell registration method.
     /// - Parameters:
-    ///
+    ///   - cell: Collection view cell.
+    ///   - indexPath: Cell index.
+    ///   - id: Reminder identifier.
     private func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
         let reminder = self.reminder(for: id)
         
@@ -166,9 +169,26 @@ final class ReminderListViewController: UIViewController {
         }
     }
     
+    private func showDetail(for id: Reminder.ID) {
+        let reminder = reminder(for: id)
+        let viewController = ReminderViewController(reminder: reminder)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @objc private func didPressDoneButton(_ sender: ReminderDoneButton) { // The @object attribute makes this method available to Objective-C code.
         guard let id = sender.id else { return }
         
         self.completeReminder(with: id)
+    }
+}
+
+
+// MARK: - UICollectionViewDelegate
+extension ReminderListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let id = self.reminders[indexPath.item].id
+        self.showDetail(for: id)
+        return false
     }
 }

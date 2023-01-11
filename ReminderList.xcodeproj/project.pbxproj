@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37441E40296F1A8200F84665 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37441E3F296F1A8200F84665 /* ReminderViewController.swift */; };
 		37AF2483296CC7EA00376060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AF2482296CC7EA00376060 /* AppDelegate.swift */; };
 		37AF2485296CC7EA00376060 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AF2484296CC7EA00376060 /* SceneDelegate.swift */; };
 		37AF2487296CC7EA00376060 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AF2486296CC7EA00376060 /* ReminderListViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37441E3F296F1A8200F84665 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		37AF247F296CC7EA00376060 /* ReminderList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReminderList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AF2482296CC7EA00376060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AF2484296CC7EA00376060 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				37AF2484296CC7EA00376060 /* SceneDelegate.swift */,
 				37EC8EAC296DBF8100928623 /* Extensions */,
 				37AF2486296CC7EA00376060 /* ReminderListViewController.swift */,
+				37441E3F296F1A8200F84665 /* ReminderViewController.swift */,
 				37EC8EAF296DCA9D00928623 /* ReminderDoneButton.swift */,
 				37AF2488296CC7EA00376060 /* Main.storyboard */,
 				37AF2498296CC92F00376060 /* Models */,
@@ -182,6 +185,7 @@
 				37AF2483296CC7EA00376060 /* AppDelegate.swift in Sources */,
 				37EC8EB0296DCA9D00928623 /* ReminderDoneButton.swift in Sources */,
 				37EC8EAB296DBED200928623 /* UIColor+extension.swift in Sources */,
+				37441E40296F1A8200F84665 /* ReminderViewController.swift in Sources */,
 				37AF2485296CC7EA00376060 /* SceneDelegate.swift in Sources */,
 				37EC8EAE296DCA1B00928623 /* Array+extension.swift in Sources */,
 				37AF2497296CC84D00376060 /* Reminder.swift in Sources */,
